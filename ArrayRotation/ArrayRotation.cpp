@@ -25,9 +25,12 @@ void reverseArray(std:: vector<int> &a, int start, int end)
 void rotateArray(std::vector<int> &arr, int k) 
 { 
 	int n = arr.size(); 
-	reverseArray(arr, 0, k - 1); 
-	reverseArray(arr, k, n - 1); 
-	reverseArray(arr, 0, n - 1); 
+	reverseArray(arr, 0, k - 1); //cout<<endl;
+	//printVector(arr);
+	reverseArray(arr, k, n - 1); //cout<<endl;
+	//printVector(arr);
+	reverseArray(arr, 0, n - 1); //cout<<endl;
+	//printVector(arr);
 } 
 
 int main()
