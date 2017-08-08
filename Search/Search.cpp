@@ -44,7 +44,6 @@ int main()
 	cout<<"Enter the element to searched: ";
 	int val;
 	cin>>val;
-	
 
 	cout<<"\n1.Sequential Search";
 	cout<<"\n2.Binary Search";
