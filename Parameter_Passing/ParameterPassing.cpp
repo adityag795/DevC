@@ -24,7 +24,7 @@ int main()
     cout << "1. Pass by Value.\n";
     cout << "2. Pass by Reference.\n";
     cout << "3. Call by Pointer\n";
-    cout << "Enter your choice: ";
+    cout << "Enter your choice (1,2,3): ";
     cin>>ch;
 
     switch (ch)
