@@ -58,11 +58,9 @@ int main()
             vec.pop_back();
             display(vec);
             break;
-        case 6:
-            
+        case 6:            
             cout<<"\nEnter the value to be inserted: ";
             cin>>num;
-            
             cout<<"\nEnter the position at which you want to insert: ";
             cin>>pos;
             vec.insert(it+pos,num);
@@ -94,7 +92,6 @@ int main()
             }
             break;
         case 8:
-            
             for(int i = 90; i < 100; i++)
             {
                 eva.push_back(i);    // Add element at the end
