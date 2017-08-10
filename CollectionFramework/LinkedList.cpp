@@ -40,9 +40,11 @@ int main()
     cout<<"8. Insert\n";
     cout<<"9. Erase\n";
     cout<<"10. Swap\n";
-    cout<<"11. Clear\n";
+	cout<<"11. Reverse\n";
+    cout<<"12. Clear\n";
     cout<<"\nEnter your choice(1-9): ";
-    int ch;
+    
+	int ch;
     cin>>ch;
     switch (ch)
     {
@@ -140,6 +142,10 @@ int main()
 		
 			break;
 		case 11:
+			ll.reverse();
+			display(ll);
+			break;
+		case 12:
 			ll.clear();
             display(ll);
 
