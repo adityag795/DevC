@@ -60,7 +60,7 @@ int main()
 			display(stk);		
 			break;	
 		case 5:
-			cout<<"\nEnter the valur to be emplaced(add to top): ";
+			cout<<"\nEnter the value to be emplaced(add to top): ";
 			cin>>val;
 			stk.emplace(val);
 			display(stk);
