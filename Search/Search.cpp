@@ -3,7 +3,37 @@
 #include<vector>
 using namespace std;
 
-int SequentialSearch(std:: vector<int> &arr, int value) 
+bool linearSearchUnsorted(vector<int> &data, int value) 
+{
+	int size = data.size();
+	for (int i = 0; i < size; i++)
+	{
+		if (value == data[i])
+		{
+			return true;
+		}
+	}
+	return false; 
+}
+
+bool linearSearchSorted(vector<int> &data, int value) 
+{
+	int size = data.size();
+	for (int i = 0; i < size; i++)
+	{
+		if (value == data[i])
+		{
+			return true;
+		}
+		else if	(value < data[i])
+		{
+			return false;
+		}
+	}
+	return false; 
+}
+
+int SequentialSearch(vector<int> &arr, int value) 
 {
 	int size = arr.size();
 	for (int i = 0; i < size; i++)
@@ -14,7 +44,28 @@ int SequentialSearch(std:: vector<int> &arr, int value)
 	return -1; 
 }
 
-int BinarySearch(std::vector<int> &arr,int value) 
+bool BinarySearchRecursive(vector<int> &data, int low, int high, int value) 
+{
+	if (low > high)
+	{
+		return false;
+	}
+	int mid = low + (high - low) / 2; // To avoid the overflow                   
+	if (data[mid] == value)
+	{
+		return true;
+	}
+	else if (data[mid] < value)
+	{
+		return BinarySearchRecursive(data, mid + 1, high, value);
+	}
+	else
+	{
+		return BinarySearchRecursive(data, low, mid - 1, value);
+	} 
+}
+
+int BinarySearch(vector<int> &arr,int value) 
 { 
 	int size = arr.size();
 	int mid;
