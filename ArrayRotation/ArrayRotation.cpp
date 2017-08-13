@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-void printVector(std::vector<int> &data)
+void printVector(vector<int> &data)
 {
 	int count = data.size();
 	cout<<"Values stored are: ";
@@ -12,7 +12,7 @@ void printVector(std::vector<int> &data)
 	}
 }
 
-void reverseArray(std:: vector<int> &a, int start, int end) 
+void reverseArray(vector<int> &a, int start, int end) 
 { 
 	for (int i = start, j = end; i < j; i++, j--) 
 	{ 
@@ -22,7 +22,7 @@ void reverseArray(std:: vector<int> &a, int start, int end)
 	} 
 }
 
-void rotateArray(std::vector<int> &arr, int k) 
+void rotateArray(vector<int> &arr, int k) 
 { 
 	int n = arr.size(); 
 	reverseArray(arr, 0, k - 1); //cout<<endl;
@@ -47,7 +47,7 @@ int main()
 	{
 		it = vec.begin();
 		cin>>val;
-		it = vec.insert( it, val);
+		it = vec.insert(it, val);
 	}
 
 	printVector(vec);
