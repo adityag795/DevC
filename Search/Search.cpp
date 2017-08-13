@@ -50,7 +50,7 @@ bool BinarySearchRecursive(vector<int> &data, int low, int high, int value)
 	{
 		return false;
 	}
-	int mid = low + (high - low) / 2; // To avoid the overflow                   
+	int mid = low + (high - low) / 2; // To avoid the overflow.
 	if (data[mid] == value)
 	{
 		return true;
@@ -73,7 +73,7 @@ int BinarySearch(vector<int> &arr,int value)
 	int high = size-1;
 	while (low <= high)
 	{ 
-		mid = low + (high - low) / 2; // To avoid the overflow
+		mid = low + (high - low) / 2; // To avoid the overflow.
 		if (arr[mid] == value)
 		{
 			return mid;
