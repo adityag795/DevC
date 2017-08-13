@@ -9,7 +9,7 @@ int main()
 {
 	/*********************DO WHILE LOOP*************************/
 	cout << "DO-WHILE LOOP ";
-	std::vector<int>numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	vector<int>numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	int sum = 0;
 	int i = 0;
 	do
@@ -17,7 +17,7 @@ int main()
 		sum += numbers[i];
 		i++;
 	} while (i < numbers.size());
-	std::cout << "Sum is ::" << sum << std::endl;
+	cout << "Sum is :" << sum << endl;
 
 	getch();
 	/******************FOR LOOP********************************/
@@ -28,7 +28,7 @@ int main()
 	{
 		sum += numbers[i];
 	}
-	std::cout << "Sum is ::" << sum << std::endl;
+	cout << "Sum is ::" << sum << endl;
 	
 	getch();
 
@@ -41,8 +41,7 @@ int main()
 	{
 		sum += n;
 	}
-	std::cout << "Sum is ::" << sum << std::endl;
+	cout << "Sum is :" << sum << endl;
 
-	getch();
 	return 0;
 }
