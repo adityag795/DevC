@@ -15,7 +15,13 @@ int main()
 
     int len = hello.length();
 
-    cout<<text<<endl<<hello<<"\t"<<len;
+    string first = "Hello ";
+    string second = "Unreal!";
+    first.append(second);
+
+    cout << text << endl << hello << "\t" << len;
+    cout << endl << first;
+    cout << endl << first.compare(text);
 
     return 0;
 }
