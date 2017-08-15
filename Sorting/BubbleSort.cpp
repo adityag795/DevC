@@ -85,6 +85,6 @@ int main()
 	BubbleSort *bs = new BubbleSort(data);
 	bs-> sort2();
 	for (int i = 0; i < data.size(); i++)
-	cout << data[i] << " ";
+	    cout << data[i] << " ";
 	return 0; 
 }

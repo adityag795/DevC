@@ -23,7 +23,7 @@ bool InsertionSort:: more( int value1, int value2)
 	return value1 > value2; 
 } 
 
-void InsertionSort::sort() 
+void InsertionSort::sort()
 {
 	int size = arr.size();
 	int temp, j;
@@ -40,10 +40,10 @@ void InsertionSort::sort()
 
 int main() 
 {
-	vector<int> data = { 9, 1, 8, 2, 7, 3, 6, 4, 5 };
+    vector<int> data = { 9, 1, 8, 2, 7, 3, 6, 4, 5 };
 	InsertionSort *bs = new InsertionSort(data);
 	bs-> sort();
 	for (int i = 0; i < data.size(); i++)
-	cout << data[i] << " ";
+	    cout << data[i] << " ";
 	return 0; 
 }
