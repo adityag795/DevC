@@ -4,7 +4,10 @@
 #include<algorithm>
 
 using namespace std;
-
+// Array of n-1 elements, in range of 1 to n.
+// No duplicates in array. One integer is missing.
+// Find the missing integer.
+	
 // Brute force
 int findMissingNumber1(vector<int> &data) 
 {
@@ -38,23 +41,21 @@ int findMissingNumber2(vector<int> &data, int range)
 	for (int i = 1; i <= range; i++) 
 	{ 
         xorSum ^= i; 
-        cout << endl << xorSum;
+        //cout << endl << xorSum;
     } 
-    cout<<endl;
+	// cout<<endl;
+	
     // loop through the array and get the XOR of elements 
 	for (int i = 0; i < size; i++) 
 	{ 
         xorSum ^= data[i];
-        cout << endl << xorSum;
+        //cout << endl << xorSum;
 	}
 	return xorSum; 
 }
 
 int main()
 {
-    // Array of n-1 elements, in range of 1 to n.
-    // No duplicates in array. One integer is missing.
-    // Find the missing integer.
 	vector<int> arr = { 9, 6, 4, 1, 3, 2, 8, 7 };
 
 	int major = findMissingNumber2(arr,9);

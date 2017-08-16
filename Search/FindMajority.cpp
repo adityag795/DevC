@@ -9,7 +9,7 @@ using namespace std;
 
 // using sorting
 int getMajority2(vector<int> &data) 
-{ 
+{
 	int size = data.size(); 
 	int majIndex = size / 2, count; 
 	int candidate; 
@@ -19,7 +19,7 @@ int getMajority2(vector<int> &data)
 	count = 0; 
 
 	for (int i = 0; i < size; i++) 
-	{ 
+	{
 		if (data[i] == candidate)
 			count++; 
 	}
@@ -67,7 +67,7 @@ int main()
 {
 	vector<int> arr = { 90, 82, 82, 55, 90, 55, 55, 99, 55, 55, 55 };
 
-	int major = getMajority3(arr);
+	int major = getMajority2(arr);
 	if (major != -1)
 		cout<<"\nMajority element is: "<<major;
 	else

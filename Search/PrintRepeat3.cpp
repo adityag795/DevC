@@ -6,18 +6,21 @@
 
 using namespace std;
 
+// When we know that, the elements in the array are in range 1 to n-1.
+// Find the duplicate elements in array.
+
 // This won't work with 0. Handle the 0 case by incrementing with 1.
 void printRepeating(vector<int> arr)
 {
-  int i;
-  printf("The repeating elements are: \n");
-  for (i = 0; i < arr.size(); i++)
-  {
-    if (arr[abs(arr[i])] >= 0)
-      arr[abs(arr[i])] = -arr[abs(arr[i])];
-    else
-      printf(" %d ", abs(arr[i]));
-  }
+    int i;
+  	printf("The repeating elements are: \n");
+  	for (i = 0; i < arr.size(); i++)  // This gives O(n) time complexity and O(1) constant space.
+  	{
+    	if (arr[abs(arr[i])] >= 0)
+	  	    arr[abs(arr[i])] = -arr[abs(arr[i])];
+      else
+          printf(" %d ", abs(arr[i]));
+    }
 }
 
 /*

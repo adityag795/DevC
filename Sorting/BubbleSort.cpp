@@ -11,7 +11,7 @@ class BubbleSort
 		vector<int> &arr;
 		bool less(int value1, int value2);
 		bool more(int value1, int value2); 
-	
+		void swap(int&,int&);
 	public:
 	    BubbleSort(vector<int> &data);
         virtual void sort1();
@@ -39,6 +39,13 @@ bool BubbleSort::more(int value1, int value2)
 	return value1 > value2; 
 }
 
+void BubbleSort::swap(int &x, int &y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
+}
+
 // Bubble Sort
 void BubbleSort::sort1() 
 {
@@ -48,12 +55,10 @@ void BubbleSort::sort1()
 	{
 		for (j = 0; j < size - i - 1; j++)
 		{
-			if (more(arr[j],arr[j + 1]))
+			if (more(arr[j], arr[j + 1]))
 			{        
 				/* Swapping */        
-				temp = arr[j];        
-				arr[j] = arr[j + 1];        
-				arr[j + 1] = temp;
+				swap(arr[j], arr[j + 1]);
 			}        
 		}
 	} 
@@ -70,9 +75,7 @@ void BubbleSort::sort2()
 		{         
 			if (more(arr[j],arr[j+1]))         
 			{        
-				temp = arr[j];        
-				arr[j] = arr[j + 1];        
-				arr[j + 1] = temp;        
+				swap(arr[j], arr[j + 1]);
 				swapped = 1;         
 			}         
 		}

@@ -6,17 +6,18 @@
 
 using namespace std;
 
+// Using Hash-Tables
 void printRepeating2(vector<int> &data) 
 {
 	unordered_set<int> hs;
 	int size = data.size();
 	cout << "Repeating elements are : " ;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size; i++) // Time complecity is O(n)
 	{
-		if (find( hs.begin(), hs.end(), data[ i]) != hs.end())
+		if (find( hs.begin(), hs.end(), data[i]) != hs.end())
 			cout << " " << data[i];
 		else
-			hs.insert(data[i]);
+			hs.insert(data[i]); // Space Complexity is O(n)
 	}
 }
 
