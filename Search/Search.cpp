@@ -72,7 +72,7 @@ int BinarySearch(vector<int> &arr,int value)
 	int low = 0;
 	int high = size-1;
 	while (low <= high)
-	{ 
+	{
 		mid = low + (high - low) / 2; // To avoid the overflow.
 		if (arr[mid] == value)
 		{
