@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// Majority element is the element that appears more than n/2 times.
+
 // using sorting
 int getMajority2(vector<int> &data) 
 { 
