@@ -13,7 +13,6 @@ void display(vector<int> &vec)
     } 
 }
 
-
 int main()
 {
     vector<int> vec;

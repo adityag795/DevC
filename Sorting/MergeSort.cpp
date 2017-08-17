@@ -5,76 +5,88 @@
 
 using namespace std;
 
-class MergeSort 
-{ 
-	private:
-		vector<int> &arr;
-		void merge(vector<int> &arr, vector<int> &tempArray, int lowerIndex, int middleIndex, int upperIndex);
-		void mergeSrt(vector<int> &arr, vector<int> &tempArray, int lowerIndex, int upperIndex); 
-	public:
-		MergeSort(vector<int> &data);
-		virtual void sort(); 
-}; 
-
-MergeSort::MergeSort(vector<int> &data):arr(data) { } 
-
-void MergeSort:: sort() 
+void Merge(vector<int> &arr, int &l, int &m, int &r)
 {
-	int size = arr.size();
-	vector<int> tempArray(size);
-	mergeSrt(arr, tempArray, 0, size - 1); 
-} 
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 = r - m;
 
-void MergeSort:: mergeSrt(vector<int> &arr, vector<int> &tempArray, int lowerIndex, int upperIndex) 
-{
-	if (lowerIndex >= upperIndex)
-	{         
-		return;
-	}
-	int middleIndex = (lowerIndex + upperIndex) / 2;
-	mergeSrt(arr, tempArray, lowerIndex, middleIndex);
-	mergeSrt(arr, tempArray, middleIndex + 1, upperIndex);
-	merge(arr, tempArray, lowerIndex, middleIndex, upperIndex); 
-} 
+    // Creating temporary arrays.
+    vector<int> L(n1), R(n2);
 
-void MergeSort:: merge(vector<int> &arr, vector<int> &tempArray, int lowerIndex, int middleIndex, int upperIndex) 
-{
-	int lowerStart = lowerIndex;
-	int lowerStop = middleIndex;
-	int upperStart = middleIndex + 1;
-	int upperStop = upperIndex;
-	int count = lowerIndex;
-	while (lowerStart <= lowerStop && upperStart <= upperStop)
-	{         
-		if (arr[lowerStart] < arr[upperStart])         
-		{         
-			tempArray[count++] = arr[lowerStart++];         
-		}         
-		else         
-		{
-			tempArray[count++] = arr[upperStart++];         
-		}
-	}
-	while (lowerStart <= lowerStop)
-	{         
-		tempArray[count++] = arr[lowerStart++];
-	}
-	while (upperStart <= upperStop)
-	{         
-		tempArray[count++] = arr[upperStart++];
-	}
-	for (int i = lowerIndex; i <= upperIndex; i++)
-	{         
-		arr[i] = tempArray[i];
-	} 
+    // Copy data to temporary arrays L[] and R[].
+    for(i = 0; i < n1; i++)
+        L[i] = arr[ l + i ];
+    for(j = 0; j < n2; j++)
+        R[j] = arr[ m + 1 + j ];
+
+    // Merge the temporary arrays back into arr[l..r].
+    i = 0; // Initial index of first subarray
+    j = 0; // Initial index of second subarray
+    k = l; // Initial index of merged subarray
+
+    while( i < n1 && j < n2 )
+    {
+        if (L[i] <= R[j])
+        {
+            arr[k] = L[i];
+            i++;
+        }
+        else
+        {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy the remaining elements of L[], if there are any.
+    while( i < n1 )
+    {
+        arr[k] = L[i];
+        i++; k++;
+    }
+    
+    // Copy the remaining elements of R[], if there are any.
+    while( j < n2 )
+    {
+        arr[k] = R[j];
+        j++;k++;
+    }
 }
 
-int main() 
+void MergeSort(vector<int> &arr, int l, int r)
 {
-    vector<int> data = { 9, 1, 8, 2, 7, 3, 6, 4, 5 };
-	InsertionSort *bs = new InsertionSort(data);
-	bs-> sort();
-	for (int i = 0; i < data.size(); i++)
-	    cout << data[i] << " ";
-	return 0; 
+    if (l < r)
+    {
+        int m = l + (r - l)/2;
+        MergeSort(arr, l, m);
+        MergeSort(arr, m+1, r);
+        Merge(arr, l , m , r);
+    }
+}
+
+void display(vector<int> &vec)
+{
+    int count = vec.size();  // Return size
+    cout<<"\nValues stored are: ";
+    for(int i = 0; i < count; i++)
+    {
+        cout<<" "<<vec[i];
+    } 
+}
+
+int main()
+{
+    vector<int> arr = {12, 11, 13, 5, 6, 7};
+    int arr_size = arr.size();
+ 
+    printf("In the given array, ");
+    display(arr);
+ 
+    MergeSort(arr, 0, arr_size - 1);
+ 
+    printf("\nAfter Sorting, ");
+    display(arr);
+    return 0;
 }
