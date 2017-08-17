@@ -55,7 +55,7 @@ void Merge(vector<int> &arr, int &l, int &m, int &r)
     }
 }
 
-void MergeSort(vector<int> &arr, int l, int r)
+void MergeSort(vector<int> &arr, int l, int r) // Time Complexity: O(nlogn)
 {
     if (l < r)
     {
