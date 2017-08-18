@@ -79,7 +79,7 @@ void LinkedList:: addTail(int value) // using head pointer, complexity of creati
 	list_size++;
 }
 
-void LinkedList:: print() 
+void LinkedList:: print()
 {
 	Node *temp = head;
 	while (temp != nullptr)
