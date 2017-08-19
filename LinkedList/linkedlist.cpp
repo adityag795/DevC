@@ -53,7 +53,7 @@ class LinkedList
 
 			virtual void removeLoop();
 			virtual Node *loopPointDetect();
-			virtual LinkedList *findIntersection( Node *head, Node *head2);
+			virtual Node *findIntersection( Node *head, Node *head2);
 		// Other linked list methods. 
 }; 
 
@@ -703,10 +703,11 @@ int main()
 				cout<<"\nLoop removed.";
 				break;
 			case 24:
+			/*
 				l3 = ll->findIntersection( ll, l2);
 				cout<<"\nIntersection point is: ";
 				l3 -> print();
-				break;
+			*/	break;
 			case 25:
 				opt = 25;
 				break;
