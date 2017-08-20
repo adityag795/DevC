@@ -91,7 +91,10 @@ void LinkedList:: addTail(int value) // using head pointer, complexity of creati
 	Node *curr = head;
 	// Zero element test : Checks if list is empty or not
 	if (head == nullptr)
+	{	
 		head = newNode;
+		return;
+	}
 	// Move curr pointer to tail end
 	while (curr-> next != nullptr)
 		curr = curr-> next; // traversing through list
@@ -443,7 +446,7 @@ int LinkedList:: loopTypeDetect()
 }
 
 void LinkedList:: removeLoop() 
-{ 
+{
 	Node *loopPoint = loopPointDetect(); 
 	if (loopPoint == nullptr) 
 	{ 
@@ -461,7 +464,7 @@ void LinkedList:: removeLoop()
 	}
 	Node *secondPtr = loopPoint; 
 	while (firstPtr-> next != secondPtr-> next) 
-	{ 
+	{
 		firstPtr = firstPtr-> next; 
 		secondPtr = secondPtr-> next; 
 	} 
@@ -566,7 +569,7 @@ int main()
 	cout<<"\n22. Detect loop type using slow pointer fast pointer approach.";
 	cout<<"\n23. Remove loop in Linked List.";
 	cout<<"\n24. Find intersection in Linked List.";
-	cout<<"\n25. Exit";
+	cout<<"\n25. Exit.";
 
 	do
 	{
