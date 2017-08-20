@@ -322,6 +322,7 @@ LinkedList* LinkedList:: CopyList()
 	Node *tailNode = nullptr;
 	Node *tempNode = nullptr;
 	Node *curr = head;
+	// If the list is empty
 	if (curr == nullptr)
 	{
 		LinkedList* ll2 = new LinkedList();
@@ -350,6 +351,7 @@ bool LinkedList:: compareList( LinkedList* ll)
 
 bool LinkedList:: compareList( Node *head1, Node *head2) 
 {
+	// If both of the linked list has only one node.
 	if (head1 == nullptr && head2 == nullptr)
 	{
 		return true;
