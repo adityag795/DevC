@@ -151,44 +151,45 @@ int LinkedList:: removeHead()
 {
 	if (isEmpty())
 	{
-		cout<<"The list is empty.\n";
+		cout << "The list is empty.\n";
 		return NULL;
 	}
-	Node *deleteMe = head;
+	Node *delNode = head;
 	int value = head-> value;
 	head = head-> next;
 	list_size--;
-	delete deleteMe;
+	delete delNode;
 	return value;
 }
 
 bool LinkedList:: deleteNode(int delValue) 
 {
 	Node *temp = head;
-	Node *deleteMe;
+	Node *delNode;
 	// check if list is empty.
 	if (isEmpty())
-	{		
-		cout<<"The list is empty.\n";
+	{
+		cout << "The list is empty.\n";
 		return false;
 	}
 	// check if node that need to be deleted is head node.
 	if (delValue == head-> value)
 	{
-		deleteMe = head;
+		delNode = head;
 		head = head-> next;
 		list_size--;
-		delete deleteMe;
+		delete delNode;
 		return true;
 	}
+	// Traversing the list.
 	while (temp-> next != nullptr)
 	{
 		if (temp-> next-> value == delValue)
 		{
-			deleteMe = temp-> next;
+			delNode = temp-> next;
 			temp-> next = temp-> next-> next;
 			list_size--;
-			delete deleteMe;
+			delete delNode;
 			return true;
 		}
 		temp = temp-> next;
@@ -198,24 +199,32 @@ bool LinkedList:: deleteNode(int delValue)
 
 void LinkedList:: deleteNodes(int delValue)
 {
+	// check if list is empty.
+	if (isEmpty())
+	{
+		cout << "The list is empty.\n";
+		return;
+	}
 	Node *currNode = head;
 	Node *nextNode;
-	Node *deleteMe;
-	while (currNode != nullptr && currNode-> value == delValue) // first node
+	Node *delNode;
+	// For the first node
+	while (currNode != nullptr && currNode-> value == delValue) 
 	{
-		deleteMe = head;
+		delNode = head;
 		head = currNode-> next;
 		currNode = head;
-		delete deleteMe;
+		delete delNode;
 	}
+	// traversing the list to check other nodes
 	while (currNode != nullptr)
 	{
 		nextNode = currNode-> next;
 		if (nextNode != nullptr && nextNode-> value == delValue)
 		{
-			deleteMe = currNode-> next;
+			delNode = currNode-> next;
 			currNode-> next = nextNode-> next;
-			delete deleteMe;
+			delete delNode;
 		}
 		else
 			currNode = nextNode;
@@ -239,8 +248,8 @@ void LinkedList:: freeList()
 void LinkedList:: reverse() 
 {
 	Node *curr = head;
-	Node *prev = nullptr;
 	Node *next = nullptr;
+	Node *prev = nullptr;
 	while (curr != nullptr)
 	{
 		next = curr-> next;
@@ -274,14 +283,14 @@ void LinkedList:: reverseRecurse()
 void LinkedList:: removeDuplicate()
 {
 	Node *curr = head;
-	Node *deleteMe;
+	Node *delNode;
 	while (curr != nullptr)
 	{
 		if (curr-> next != nullptr && curr-> value == curr-> next-> value)
 		{
-			deleteMe = curr-> next;
+			delNode = curr-> next;
 			curr-> next = curr-> next-> next;
-			delete deleteMe;
+			delete delNode;
 		}
 		else
 		{
@@ -295,7 +304,7 @@ LinkedList *LinkedList:: CopyListReversed()
 	Node *tempNode = nullptr;
 	Node *tempNode2 = nullptr;
 	Node *curr = head;
-	
+	// traversing list to the end.
 	while (curr != nullptr)
 	{
 		tempNode2 = new Node(curr-> value, tempNode);
@@ -331,13 +340,13 @@ LinkedList* LinkedList:: CopyList()
 	}
 	LinkedList* ll2 = new LinkedList();
 	ll2-> head = headNode;
-	return ll2; 
+	return ll2;
 }
 
 bool LinkedList:: compareList( LinkedList* ll) 
 {
 	return compareList( head, ll-> head); 
-} 
+}
 
 bool LinkedList:: compareList( Node *head1, Node *head2) 
 {
@@ -556,7 +565,7 @@ int main()
 	cout<<"\n9. Delete all the occurences of particular value in Linked List.";
 	cout<<"\n10. Delete all the elements of Linked List.";
 	cout<<"\n11. Reverse a Linked List.";
-	cout<<"\n12. Recursively reverse a single Linked List.";
+	cout<<"\n12. Recursively reverse a single Linked List.		</>";
 	cout<<"\n13. Remove Duplicates from Linked List.";
 	cout<<"\n14. Copy the content of linked list in another linked list in reverse order.";
 	cout<<"\n15. Copy the content of given linked list into another linked list.";
