@@ -24,14 +24,14 @@ class LinkedList
 
 			virtual int findLength();
 		//	virtual int peek();
-			virtual void addHead(int value);
-			virtual void addTail(int value) ;
+			virtual void addHead(int);
+			virtual void addTail(int) ;
 			virtual void print();
-			virtual void sortedInsert(int value);
-			virtual bool isPresent(int data);
+			virtual void sortedInsert(int);
+			virtual bool isPresent(int);
 			virtual int removeHead();
-			virtual bool deleteNode(int delValue);
-			virtual void deleteNodes(int delValue);
+			virtual bool deleteNode(int);
+			virtual void deleteNodes(int);
 			virtual void freeList();
 			virtual void reverse();
 			virtual void reverseRecurse();
@@ -41,7 +41,7 @@ class LinkedList
 			virtual void removeDuplicate();
 
 			virtual bool compareList(Node* , Node*);
-			virtual bool compareList( LinkedList* ll);
+			virtual bool compareList( LinkedList*);
 
 			virtual int nthNodeFromBegining(int);
 			virtual int nthNodeFromEnd(int);
@@ -57,7 +57,7 @@ class LinkedList
 		// Other linked list methods. 
 }; 
 
-LinkedList:: Node:: Node(int v,Node *n)
+LinkedList:: Node:: Node(int v,Node* n)
 {
 	value = v;
 	next = n; 
@@ -87,8 +87,8 @@ void LinkedList:: addHead(int value)
 
 void LinkedList:: addTail(int value) // using head pointer, complexity of creation of list is n^2.
 {
-	Node *newNode = new Node(value);
-	Node *curr = head;
+	Node* newNode = new Node(value);
+	Node* curr = head;
 	// Zero element test : Checks if list is empty or not
 	if (head == nullptr)
 	{	
@@ -104,7 +104,7 @@ void LinkedList:: addTail(int value) // using head pointer, complexity of creati
 
 void LinkedList:: print()
 {
-	Node *temp = head;
+	Node* temp = head;
 	while (temp != nullptr)
 	{
 		cout << temp-> value << " ";
@@ -321,10 +321,10 @@ LinkedList* LinkedList:: CopyListReversed()
 
 LinkedList* LinkedList:: CopyList()
 {
-	Node *headNode = nullptr;
-	Node *tailNode = nullptr;
-	Node *tempNode = nullptr;
-	Node *curr = head;
+	Node* headNode = nullptr;
+	Node* tailNode = nullptr;
+	Node* tempNode = nullptr;
+	Node* curr = head;
 	// If the list is empty
 	if (curr == nullptr)
 	{
@@ -347,7 +347,7 @@ LinkedList* LinkedList:: CopyList()
 	return ll2;
 }
 
-bool LinkedList:: compareList( Node *head1, Node *head2) 
+bool LinkedList:: compareList( Node* head1, Node* head2) 
 {
 	// If both of the linked list has only one node.
 	if (head1 == nullptr && head2 == nullptr)
@@ -377,7 +377,7 @@ int LinkedList:: nthNodeFromBegining( int index)
 		cout<< "Too few Nodes.";
 	}
 	int count = 0;
-	Node *curr = head;
+	Node* curr = head;
 	while (curr != nullptr && count < index - 1)
 	{
 		count++;
@@ -402,8 +402,8 @@ int LinkedList:: nthNodeFromEnd( int index)
 // Using Smart Pointer Fast Pointer Approach
 bool LinkedList:: loopDetect()
 {
-	Node *slowPtr;
-	Node *fastPtr;
+	Node* slowPtr;
+	Node* fastPtr;
 	slowPtr = fastPtr = head;
 	while (fastPtr-> next != nullptr && fastPtr-> next-> next != nullptr)
 	{
@@ -411,37 +411,37 @@ bool LinkedList:: loopDetect()
 		fastPtr = fastPtr-> next-> next;
 		if (slowPtr == fastPtr)
 		{
-			cout << "loop found" << endl;
+			cout << "Loop found" << endl;
 			return true;
 		}
 	}
-	cout << "loop not found" << endl;
+	cout << "Loop not found" << endl;
 	return false; 
 }
 
 // Not used much since it involves alteriing linked list.
 bool LinkedList:: reverseListLoopDetect() 
 {
-	Node *tempHead = head;
+	Node* tempHead = head;
 	reverse();
 	if (tempHead == head)
 	{
 		reverse();
-		cout << "loop found" << endl;
+		cout << "Loop found" << endl;
 		return true;
 	}
 	else
 	{
 		reverse();
-		cout << "loop not found" << endl;
+		cout << "Loop not found" << endl;
 		return false;
-	} 
+	}
 }
 
 int LinkedList:: loopTypeDetect()
 {
-	Node *slowPtr;
-	Node *fastPtr;
+	Node* slowPtr;
+	Node* fastPtr;
 	slowPtr = fastPtr = head;
 	while (fastPtr-> next != nullptr && fastPtr-> next-> next != nullptr)
 	{
@@ -464,12 +464,12 @@ int LinkedList:: loopTypeDetect()
 
 void LinkedList:: removeLoop() 
 {
-	Node *loopPoint = loopPointDetect(); 
+	Node* loopPoint = loopPointDetect(); 
 	if (loopPoint == nullptr) 
 	{ 
 		return; 
 	} 
-	Node *firstPtr = head; 
+	Node* firstPtr = head; 
 	if (loopPoint == head) 
 	{ 
 		while (firstPtr-> next != head) 
@@ -479,7 +479,7 @@ void LinkedList:: removeLoop()
 		firstPtr-> next = nullptr; 
 		return; 
 	}
-	Node *secondPtr = loopPoint; 
+	Node* secondPtr = loopPoint; 
 	while (firstPtr-> next != secondPtr-> next) 
 	{
 		firstPtr = firstPtr-> next; 
@@ -488,10 +488,10 @@ void LinkedList:: removeLoop()
 	secondPtr-> next = nullptr; 
 }
 
-LinkedList:: Node *LinkedList:: loopPointDetect() 
+LinkedList:: Node* LinkedList:: loopPointDetect() 
 { 
-	Node *slowPtr; 
-	Node *fastPtr; 
+	Node* slowPtr; 
+	Node* fastPtr; 
 	slowPtr = fastPtr = head; 
 	while (fastPtr-> next != nullptr && fastPtr-> next-> next != nullptr) 
 	{ 
@@ -505,12 +505,12 @@ LinkedList:: Node *LinkedList:: loopPointDetect()
 	return nullptr; 
 }
 
-LinkedList:: Node *LinkedList:: findIntersection( Node *head, Node *head2) 
+LinkedList:: Node* LinkedList:: findIntersection( Node* head, Node* head2) 
 {
 	int l1 = 0;
 	int l2 = 0;
-	Node *tempHead = head;
-	Node *tempHead2 = head2;
+	Node* tempHead = head;
+	Node* tempHead2 = head2;
 	while (tempHead != nullptr)
 	{
 		l1++;
@@ -524,7 +524,7 @@ LinkedList:: Node *LinkedList:: findIntersection( Node *head, Node *head2)
 	int diff;
 	if (l1 < 12)
 	{
-		Node *temp = head;
+		Node* temp = head;
 		head = head2;
 		head2 = temp;
 		diff = l2 - l1;
@@ -547,7 +547,7 @@ LinkedList:: Node *LinkedList:: findIntersection( Node *head, Node *head2)
 
 int LinkedList:: findLength() 
 {
-	Node *curr = head;
+	Node* curr = head;
 	int count = 0;
 	while (curr != nullptr)
 	{
