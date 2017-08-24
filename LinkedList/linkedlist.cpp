@@ -15,7 +15,7 @@ class LinkedList
 			Node(int,Node*);
 			Node(int);
 		};
-		Node *head;
+		Node* head;
 		int list_size; 
 		
 		public:
