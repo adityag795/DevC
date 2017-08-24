@@ -14,7 +14,7 @@ class CircularLinkedList
 			Node* next;
 			Node(int,Node*);
 			Node(int);
-		}; 
+		};
 	private:
 		Node* tail;
 		int list_size; 
@@ -169,29 +169,32 @@ bool CircularLinkedList:: removeNode( int key)
 {
 	if (isEmpty())
 		return false;
+
 	Node* prev = tail;
 	Node* curr = tail-> next;
 	Node* head = tail-> next;
+
 	if (curr-> value == key) // head and single node case.
 	{
-		if (curr == curr-> next) // single node case
+		if (curr == curr-> next) // single node case.
 		{
 			tail = nullptr;
 		}
-		else // head case
+		else // Node to be deleted is head.
 		{
 			tail-> next = tail-> next-> next;
 		}
 		delete curr;
 		return true;
 	}
-	prev = curr;
-	curr = curr-> next;
+	// Now since head and tail node do not contain the value
+	prev = curr;// Move prev one node ahead
+	curr = curr-> next;// Move curr one node ahead
 	while (curr != head)
 	{
 		if (curr-> value == key)
 		{
-			if (curr == tail)
+			if (curr == tail)// If tail node has the del Value
 			{        
 				tail = prev;
 			}
@@ -202,9 +205,8 @@ bool CircularLinkedList:: removeNode( int key)
 		prev = curr;
 		curr = curr-> next;
 	}
-	return false; 
+	return false;
 }
-
 
 CircularLinkedList* CircularLinkedList:: copyListReversed() 
 {
