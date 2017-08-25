@@ -124,7 +124,7 @@ void LinkedList:: sortedInsert(int value)
 		head = newNode;
 		return;
 	}
-	// traversing through list to stop at right position.
+	// Traversing through list to stop at right position.
 	while (curr-> next != nullptr && curr->next->value < value)
 	{
 		curr = curr-> next;
