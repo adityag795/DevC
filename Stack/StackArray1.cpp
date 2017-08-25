@@ -99,7 +99,7 @@ int main()
 	cout<<"\n3. Size.";
 	cout<<"\n4. Print all.";
     cout<<"\n5. Element at top.";
-    cout<<"\n6. .";
+    cout<<"\n6. Exit.";
     
     do
 	{
@@ -137,9 +137,6 @@ int main()
                 break;
 			case 6:
 				opt=6;
-				break;
-			case 7:
-				
 				break;
 			default:cout<<"\nPlease enter the correct choice: ";
 		}
