@@ -11,6 +11,7 @@
         "algorithm": "cpp",
         "unordered_set": "cpp",
         "system_error": "cpp",
-        "xfunctional": "cpp"
+        "xfunctional": "cpp",
+        "C_Cpp.intelliSenseEngine": "Default"
     }
 }
