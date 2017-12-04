@@ -9,11 +9,11 @@ class InsertionSort
 { 
 	private:
 		vector<int> &arr;
-		bool more(int value1, int value2); 
-		bool less(int value1, int value2); 
+		bool more(int, int); 
+		bool less(int , int); 
 
 	public:
-		InsertionSort(vector<int> &data);
+		InsertionSort(vector<int>&);
 		virtual void sort(); 
 };
 
