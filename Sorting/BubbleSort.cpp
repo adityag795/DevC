@@ -13,7 +13,7 @@ class BubbleSort
 		bool more(int, int); 
 		void swap(int&, int&);
 	public:
-	    BubbleSort(vector<int> &data);
+	    BubbleSort(vector<int>&);
         virtual void sort1();
         virtual void sort2(); 
 };
