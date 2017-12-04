@@ -10,7 +10,7 @@ class InsertionSort
 	private:
 		vector<int> &arr;
 		bool more(int, int); 
-		bool less(int , int); 
+		bool less(int, int); 
 
 	public:
 		InsertionSort(vector<int>&);
@@ -19,7 +19,7 @@ class InsertionSort
 
 InsertionSort:: InsertionSort(vector<int> &data):arr(data) { } 
 
-bool InsertionSort:: more( int value1, int value2) 
+bool InsertionSort::more(int value1, int value2) 
 {
 	return value1 > value2; 
 }
@@ -27,7 +27,7 @@ bool InsertionSort:: more( int value1, int value2)
 bool InsertionSort::less(int value1, int value2) 
 {
 	return value1 < value2; 
-} 
+}
 
 void InsertionSort::sort()
 {
