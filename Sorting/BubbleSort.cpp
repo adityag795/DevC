@@ -8,7 +8,7 @@ using namespace std;
 class BubbleSort 
 {
 	private:
-		vector<int> &arr;
+		vector<int>& arr;
 		bool less(int, int);
 		bool more(int, int); 
 		void swap(int&, int&);
@@ -18,11 +18,11 @@ class BubbleSort
         virtual void sort2(); 
 };
 
-BubbleSort::BubbleSort(vector<int> &data):arr(data) { }
+BubbleSort::BubbleSort(vector<int>& data):arr(data) { }
 /* 
 You can't initialize reference members as shown below.
 You must use initializer's list as shown above.
-BubbleSort::BubbleSort(vector<int> &data)
+BubbleSort::BubbleSort(vector<int>& data)
 {
     arr = data;
 }
@@ -86,7 +86,7 @@ int main()
 {
 	vector<int> data = { 9, 1, 8, 2, 7, 3, 6, 4, 5 };
 	BubbleSort *bs = new BubbleSort(data);
-	bs-> sort1();
+	bs -> sort1();
 	for (int i = 0; i < data.size(); i++)
 	    cout << data[i] << " ";
 	return 0; 

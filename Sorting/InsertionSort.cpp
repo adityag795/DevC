@@ -8,7 +8,7 @@ using namespace std;
 class InsertionSort 
 { 
 	private:
-		vector<int> &arr;
+		vector<int>& arr;
 		bool more(int, int); 
 		bool less(int, int); 
 
@@ -17,7 +17,7 @@ class InsertionSort
 		virtual void sort(); 
 };
 
-InsertionSort:: InsertionSort(vector<int> &data):arr(data) { } 
+InsertionSort:: InsertionSort(vector<int>& data):arr(data) { } 
 
 bool InsertionSort::more(int value1, int value2) 
 {
@@ -48,7 +48,7 @@ int main()
 {
     vector<int> data = { 9, 1, 8, 2, 7, 3, 6, 4, 5 };
 	InsertionSort *bs = new InsertionSort(data);
-	bs-> sort();
+	bs -> sort();
 	for (int i = 0; i < data.size(); i++)
 	    cout << data[i] << " ";
 	return 0; 
