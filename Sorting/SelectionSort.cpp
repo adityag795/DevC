@@ -11,7 +11,7 @@ class SelectionSort
 		vector<int> &arr;
 		bool less(int value1, int value2);
 		bool more(int value1, int value2); 
-	
+		void swap(int&, int&);
 	public:
 		SelectionSort(vector<int> &data);
 		virtual void sort(); // back array
@@ -30,10 +30,18 @@ bool SelectionSort:: more( int value1, int value2)
 	return value1 > value2;
 } 
 
+void SelectionSort::swap(int& x, int& y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
+}
+
+// Please follow the next method.
 void SelectionSort:: sort() 
 {
 	int size = arr.size();
-	int i, j, max, temp;
+	int i, j, max;
 	for (i = 0; i < size-1; i++)
 	{
 		max = 0;
@@ -44,16 +52,16 @@ void SelectionSort:: sort()
 				max = j;
 			}
 		}
-		temp = arr[size-1-i];
-		arr[size-1-i] = arr[max];
-		arr[max] = temp;
+		swap(arr[size-1-i],arr[max]);
 	} 
 }
 
-void SelectionSort:: sort2() 
+// This is more prefferable as it can converted for descending order by changing if condition
+// by changing '<' to ' >'.
+void SelectionSort:: sort2()
 {
 	int size = arr.size();          
-	int i, j, min, temp;          
+	int i, j, min;          
 	for (i = 0; i < size-1; i++)          
 	{                   
 		min = i;                   
@@ -64,9 +72,7 @@ void SelectionSort:: sort2()
 				min = j;                             
 			}                   
 		}
-		temp = arr[i];                   
-		arr[i] = arr[min];                   
-		arr[min] = temp;          
+		swap(arr[i],arr[min]);
 	} 
 }
 
@@ -74,7 +80,7 @@ int main()
 {
 	vector<int> data = { 9, 1, 8, 2, 7, 3, 6, 4, 5 };
 	SelectionSort *bs = new SelectionSort(data);
-	bs-> sort2();
+	bs -> sort2();
 	for (int i = 0; i < data.size(); i++)
     	cout << data[i] << " ";
 	return 0; 
