@@ -5,14 +5,14 @@
 
 using namespace std;
 
-void swap(int *a, int *b)
+void swap(int* a, int* b)
 {
     int t = *a;
     *a = *b;
     *b = t;
 }
 
-int partition(vector<int> &arr, int low, int high)
+int partition(vector<int>& arr, int low, int high)
 {
     int pivot = arr[high];  // Pivot
     int i = low - 1;        // Index of smaller element
@@ -35,7 +35,7 @@ int partition(vector<int> &arr, int low, int high)
   arr[] --> Array to be sorted,
   low  --> Starting index,
   high  --> Ending index */
-void QuickSort(vector<int> &arr, int low, int high)
+void QuickSort(vector<int>& arr, int low, int high)
 {
     if (low < high)
     {
@@ -50,7 +50,7 @@ void QuickSort(vector<int> &arr, int low, int high)
     }
 }
 
-void display(vector<int> &vec)
+void display(vector<int>& vec)
 {
     int count = vec.size();  // Return size
     cout<<"\nValues stored are: ";
@@ -59,6 +59,7 @@ void display(vector<int> &vec)
         cout<<" "<<vec[i];
     } 
 }
+
 int main()
 {
     vector<int> arr = {12, 11, 13, 5, 6, 7};
