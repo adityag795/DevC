@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void Merge(vector<int> &arr, int &l, int &m, int &r)
+void Merge(vector<int>& arr, int& l, int& m, int& r)
 {
     int i, j, k;
     int n1 = m - l + 1;
@@ -55,7 +55,8 @@ void Merge(vector<int> &arr, int &l, int &m, int &r)
     }
 }
 
-void MergeSort(vector<int> &arr, int l, int r) // Time Complexity: O(nlogn)
+// 'l' is starting index and 'r' is index of last element in array.
+void MergeSort(vector<int>& arr, int l, int r) // Time Complexity: O(nlogn)
 {
     if (l < r)
     {
@@ -66,7 +67,7 @@ void MergeSort(vector<int> &arr, int l, int r) // Time Complexity: O(nlogn)
     }
 }
 
-void display(vector<int> &vec)
+void display(vector<int>& vec)
 {
     int count = vec.size();  // Return size
     cout<<"\nValues stored are: ";
@@ -78,7 +79,7 @@ void display(vector<int> &vec)
 
 int main()
 {
-    vector<int> arr = {12, 11, 13, 5, 6, 7};
+    vector<int> arr = {100, 12, 11, 13, 5, 6, 7, -100};
     int arr_size = arr.size();
  
     printf("In the given array, ");

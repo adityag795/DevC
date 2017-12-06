@@ -6,21 +6,21 @@
 using namespace std;
 
 class SelectionSort 
-{ 
+{
 	private:
-		vector<int> &arr;
-		bool less(int value1, int value2);
-		bool more(int value1, int value2); 
+		vector<int>& arr;
+		bool less(int, int);
+		bool more(int, int); 
 		void swap(int&, int&);
 	public:
-		SelectionSort(vector<int> &data);
+		SelectionSort(vector<int>&);
 		virtual void sort(); // back array
 		virtual void sort2(); // front array 
 }; 
 
-SelectionSort:: SelectionSort(vector<int> &data):arr( data) { } 
+SelectionSort:: SelectionSort(vector<int>& data):arr( data) { } 
 
-bool SelectionSort:: less( int value1, int value2) 
+bool SelectionSort:: less(int value1, int value2) 
 {
 	return value1 < value2; 
 } 
@@ -37,7 +37,7 @@ void SelectionSort::swap(int& x, int& y)
 	y = temp;
 }
 
-// Please follow the next method.
+// Please follow the next method as changing '>' to '<' won't reorder in descending order.
 void SelectionSort:: sort() 
 {
 	int size = arr.size();
@@ -73,7 +73,7 @@ void SelectionSort:: sort2()
 			}                   
 		}
 		swap(arr[i],arr[min]);
-	} 
+	}
 }
 
 int main() 
