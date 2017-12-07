@@ -24,7 +24,7 @@ int partition(vector<int>& arr, int low, int high)
         if (arr[j] <= pivot)
         {
             i++;    // increment index of smaller element
-            swap(&arr[i], &arr[j]);
+            swap(&arr[i], &arr[j]); // placeing the pivot in its actual position
         }
     }
     swap(&arr[i+1], &arr[high]);
