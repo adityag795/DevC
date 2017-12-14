@@ -4,11 +4,11 @@
 
 using namespace std;
 
-void display(list<int> &ll)
+void display(list<int>& ll)
 {
     cout<< "Contents of Linked List: ";
 	for(auto var:ll) 
-		cout<< var<< " ";
+		cout<< var << " ";
 	cout<<endl;
 }
 
