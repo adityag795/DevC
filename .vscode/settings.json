@@ -12,6 +12,8 @@
         "unordered_set": "cpp",
         "system_error": "cpp",
         "xfunctional": "cpp",
-        "C_Cpp.intelliSenseEngine": "Default"
+        "C_Cpp.intelliSenseEngine": "Default",
+        "tuple": "cpp",
+        "utility": "cpp"
     }
 }

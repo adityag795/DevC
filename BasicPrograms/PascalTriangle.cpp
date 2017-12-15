@@ -9,7 +9,7 @@ int main()
 
     for(row = 0; row < noOfRows; row++)
     {
-        for(colSpaces = noOfRows-row; colSpaces>=1; colSpaces--)
+        for(colSpaces = noOfRows-row; colSpaces >= 1; colSpaces--)
         {
             printf(" ");
         }
