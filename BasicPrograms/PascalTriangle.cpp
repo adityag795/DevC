@@ -1,31 +1,32 @@
 #include<stdio.h>
 
-long fact(int);
 int main()
 {
-    int line,i,j;
-    printf("Enter the no. of lines: ");
-    scanf("%d",&line);
+    int noOfRows,row,colSpaces,colChar;
 
-    for(i=0; i<line; i++)
+    printf("Enter number of rows: ");
+    scanf("%d", &noOfRows);
+
+    for(row = 0; row < noOfRows; row++)
     {
-        for(j=0; j<line-i-1; j++)
+        for(colSpaces = noOfRows-row; colSpaces>=1; colSpaces--)
+        {
             printf(" ");
-        for(j=0; j<=i; j++)
-            printf("%ld ",fact(i) / (fact(j) * fact(i-j)));
+        }
+        
+        int printChar = 1;
+        int num = row;
+        int den = 1;
+        for(colChar = 0; colChar <= row; colChar++)
+        {
+            printf("%d ",printChar);
+            printChar = printChar * num;
+            printChar = printChar / den;
+            num--;
+            den++;
+        }
         printf("\n");
     }
+    
     return 0;
-}
-
-long fact(int num)
-{
-    long f=1;
-    int i=1;
-    while(i<=num)
-    {
-        f=f*i;
-        i++;
-    }
-    return f;
 }
